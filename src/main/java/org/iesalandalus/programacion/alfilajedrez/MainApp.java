@@ -89,6 +89,16 @@ public class MainApp {
 		return columna;
 	}
 	
+	private static void mostrarMenuDirecciones() 
+	{
+		System.out.println("Elige la dirección");
+		System.out.println("--------------------------------------");
+		System.out.println("1.abajo-derecha");
+		System.out.println("2.abajo-izquierda");
+		System.out.println("3.arriba-derecha");
+		System.out.println("4.arriba-izquierda");
+	}
+	
 	
 	
 
