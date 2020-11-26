@@ -13,9 +13,9 @@ public class Alfil
 	public void mover(Direccion direccion, int pasos) throws OperationNotSupportedException 
 	{
 		if(pasos<=0)
-			throw new IllegalArgumentException("ERROR: la cantidad de pasos ha de ser positiva");
+			throw new IllegalArgumentException("ERROR: El número de pasos debe ser positivo.");
 		if(direccion==null)
-			throw new NullPointerException("ERROR: la direccion no puede ser nula");
+			throw new NullPointerException("ERROR: La dirección no puede ser nula.");
 		
 		try 
 		{
@@ -43,7 +43,7 @@ public class Alfil
 			}
 		}	
 		catch (IllegalArgumentException ex) {
-			throw new OperationNotSupportedException("ERROR: no se puede realizar ese movimiento");
+			throw new OperationNotSupportedException("ERROR: Movimiento no válido (se sale del tablero).");
 		}
 	}
 	
@@ -59,7 +59,7 @@ public class Alfil
 	public Alfil(Color color) throws NullPointerException, IllegalArgumentException
 	{
 		if(color==null)
-			throw new NullPointerException("ERROR: el color no puede ser nulo");
+			throw new NullPointerException("ERROR: No se puede asignar un color nulo.");
 		setColor(color);
 		if(color.equals(Color.BLANCO))
 			posicion=new Posicion(1, 'f');
@@ -70,7 +70,7 @@ public class Alfil
 	public Alfil(Color color, char columna) throws NullPointerException, IllegalArgumentException
 	{
 		if(columna!='c' || columna!='f')
-			throw new IllegalArgumentException("ERROR: la columna tiene que ser c o f");
+			throw new IllegalArgumentException("ERROR: Columna no válida.");
 		if(color==null)
 			throw new NullPointerException("ERROR: el color no puede ser nulo");
 		
@@ -128,6 +128,11 @@ public class Alfil
 		} else if (!posicion.equals(other.posicion))
 			return false;
 		return true;
+	}
+
+	@Override
+	public String toString() {
+		return posicion + ", color=" + color;
 	}
 }
 
