@@ -7,7 +7,7 @@ public class Posicion
 	private char columna;
 	
 	
-	//metodos
+	//métodos
 	
 	//constructor con parámetros
 	
@@ -68,6 +68,11 @@ public class Posicion
 		if (fila != other.fila)
 			return false;
 		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "fila=" + fila + ", columna=" + columna;
 	}
 	
 	
