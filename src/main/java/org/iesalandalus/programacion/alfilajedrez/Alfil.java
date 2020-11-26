@@ -15,6 +15,18 @@ public class Alfil
 		posicion=new Posicion(8, 'f');
 	}
 	
+	//constructores con parametros
+	
+	public Alfil(Color color) throws NullPointerException, IllegalArgumentException
+	{
+		if(color==null)
+			throw new NullPointerException("ERROR: el color no puede ser nulo");
+		setColor(color);
+		if(color.equals(Color.BLANCO))
+			posicion=new Posicion(1, 'f');
+		else
+			posicion=new Posicion(8, 'f');
+	}
 	
 	//getters y setters
 	public Color getColor() {
@@ -38,4 +50,6 @@ public class Alfil
 	}
 }
 
-//13.Crea un constructor por defecto para esta clase que cree un alfil negro en la posición '8f'. Realiza un commit.
+//14.Crea un constructor para la clase que acepte como parámetro el color y que creará un alfil de 
+//dicho color cuya posición será '1f' si es blanco o '8f' si es negro. Realiza un commit.
+
