@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.alfilajedrez;
 
+import org.iesalandalus.programacion.utilidades.Entrada;
+
 public class MainApp {
 
 	public static void main(String[] args) 
@@ -27,6 +29,19 @@ public class MainApp {
 		System.out.println("5.Salir");
 	}
 	
+	private static int elegirOpcion() 
+	{
+		int numero;
+		do {
+			System.out.println("Elige una de estás opciones");
+			numero=Entrada.entero();
+			if (numero<1 || numero>5)
+	   		{
+	    	System.out.println("Introduce un numero correcto");
+	   		}
+		} while (numero<1 || numero>5);
+		return numero;
+	}
 	
 
 }
