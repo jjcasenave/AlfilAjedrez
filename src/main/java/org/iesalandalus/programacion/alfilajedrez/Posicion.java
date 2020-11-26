@@ -18,10 +18,10 @@ public class Posicion
 
 	//constructor copia
 	
-	public Posicion(Posicion p) {
+	public Posicion(Posicion p) throws NullPointerException
+	{
 		setFila(p.getFila());
 		setColumna(p.getColumna());
-		
 	}
 		
 		
