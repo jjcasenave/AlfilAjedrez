@@ -74,6 +74,22 @@ public class MainApp {
 		return color;
 	}
 	
+	private static char elegirColumnaInicial() 
+	{
+		char columna='a';
+		char letraColumna;
+		
+		do {
+		System.out.println("Elige la columna inicial");
+		letraColumna=Entrada.caracter();
+		if(letraColumna !='c'&& letraColumna !='f')
+			System.out.println("ERROR: Introduce una opción correcta");		
+		}while(letraColumna !='c'&& letraColumna !='f');
+		columna=letraColumna;
+		return columna;
+	}
+	
+	
 	
 
 }
