@@ -43,5 +43,37 @@ public class MainApp {
 		return numero;
 	}
 	
+	private static Color elegirColor() 
+	{
+		int colorAlfil;
+		Color color=null;
+		do {
+			System.out.println("Elige el color del alfil");
+			System.out.println("1.Blanco");
+			System.out.println("2.Negro");
+			colorAlfil=Entrada.entero();
+			if(colorAlfil<1 && colorAlfil>2) {
+				System.out.println("Introduce una opcion correcta");
+			}
+		}while (colorAlfil<1 && colorAlfil>2);
+		
+		switch (colorAlfil) 
+		{
+		case 1:
+			color=Color.BLANCO;
+			break;
+		
+		case 2:
+			color=Color.NEGRO;
+			break;
+			
+		default:
+			break;
+		}
+		
+		return color;
+	}
+	
+	
 
 }
