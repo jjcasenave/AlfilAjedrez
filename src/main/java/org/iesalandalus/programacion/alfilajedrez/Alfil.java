@@ -101,13 +101,37 @@ public class Alfil
 			this.posicion = new Posicion(posicion);
 	
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((color == null) ? 0 : color.hashCode());
+		result = prime * result + ((posicion == null) ? 0 : posicion.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Alfil other = (Alfil) obj;
+		if (color != other.color)
+			return false;
+		if (posicion == null) {
+			if (other.posicion != null)
+				return false;
+		} else if (!posicion.equals(other.posicion))
+			return false;
+		return true;
+	}
 }
 
-//16.Crea el método mover que acepte como parámetro una Direccion y la cantidad de pasos a mover en dicha dirección. 
-//Los pasos deben ser positivos y la dirección no puede ser nula o de lo contrario debe lanzar una excepción adecuada 
-//(NullPointerException o IllegalArgumentException) con el mensaje adecuado. Si no puede realizar dicho movimiento, 
-//debido a que el álfil se sale del tablero, debe lanzar una excepción del tipo OperationNotSupportedException con un 
-//mensaje adecuado y no modificará la posición del alfil. Realiza un commit.
+
 
 
 
