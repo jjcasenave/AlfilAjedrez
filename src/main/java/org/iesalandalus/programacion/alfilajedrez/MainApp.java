@@ -99,7 +99,15 @@ public class MainApp {
 		System.out.println("4.arriba-izquierda");
 	}
 	
-	
-	
-
 }
+
+//7.Direccion elegirDireccion(): Nos mostrará un mensaje para que elijamos una opción del menú anteriormente creado y nos pedirá que introduzcamos por teclado la opción
+//hasta que ésta sea valida. Devolverá la dirección elegida. Realiza un commit.
+
+//8.void crearAlfilDefecto(): Asignará al atributo de clase alfil una nueva instancia de un alfil creado con el constructor por defecto. Realiza un commit.
+//9.void crearAlfilColor(): Asignará al atributo de clase alfil una nueva instancia de un alfil creado con el constructor al que le pasamos el color. Este método debe utilizar métodos ya implementados anteriormente. Realiza un commit.
+//10.void crearAlfilColorColumna(): Asignará al atributo de clase alfil una nueva instancia de un alfil creado con el constructor al que le pasamos el color y la columna inicial. Este método debe utilizar métodos ya implementados anteriormente. Realiza un commit.
+//11.void mover(): Mostrará un menú con las posibles direcciones, nos preguntará por la dirección y la cantidad de pasos a mover y moverá el alfil según esos parámetros. Este método debe utilizar métodos ya implementados anteriormente. Realiza un commit.
+//12.void ejecutarOpcion(int): Depediendo de la opción pasada como parámetro, actuará en consecuencia. Este método debe utilizar métodos ya implementados anteriormente. Realiza un commit.
+//13.void main(String[]): Método principal de nuestra aplicación que deberá realizar lo que se pide en el apartado 19 y que debe apoyarse en los métodos anteriormente implementados. Realiza un commit y realiza el push a tu repositorio remoto en GitHub.
+
