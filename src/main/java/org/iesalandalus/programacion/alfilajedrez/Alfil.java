@@ -8,6 +8,14 @@ public class Alfil
 	
 	//métodos
 	
+	//constructor por defecto
+	public Alfil() throws IllegalArgumentException
+	{
+		color=Color.NEGRO;
+		posicion=new Posicion(8, 'f');
+	}
+	
+	
 	//getters y setters
 	public Color getColor() {
 		return color;
@@ -30,5 +38,4 @@ public class Alfil
 	}
 }
 
-//12.Crea los métodos get y set para cada atributo con la visibilidad adecuada. Estos métodos siempre comprobarán la validez de los parámetros pasados 
-//y si no son correctos deberá lanzar la excepción adecuada (NullPointerException o IllegalArgumentException) con el mensaje adecuado. Realiza un commit.
+//13.Crea un constructor por defecto para esta clase que cree un alfil negro en la posición '8f'. Realiza un commit.
