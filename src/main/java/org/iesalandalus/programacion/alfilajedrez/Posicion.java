@@ -9,6 +9,14 @@ public class Posicion
 	
 	//metodos
 	
+	//constructor con parámetros
+	
+	public Posicion(int fila, char columna) {
+		setFila(fila);
+		setColumna(columna);
+	}
+
+	
 	//getters y setters
 	public int getFila() {
 		return fila;
@@ -31,6 +39,5 @@ public class Posicion
 	
 }
 
-//6.Crea los métodos get y set para los atributos. Recuerda que para el método set se debe tener en cuenta que los valores
-//son correctos (las filas van del 1 al 8 -ambos inclusive- y las columnas de la 'a' a la 'h' -ambas inclusive-) y si no se 
-//lance una excepción del tipo IllegalArgumentException con el mensaje adecuado y no modifique los atributos. Realiza un commit
+//8.Crea el constructor copia para esta clase. Realiza un commit.
+
