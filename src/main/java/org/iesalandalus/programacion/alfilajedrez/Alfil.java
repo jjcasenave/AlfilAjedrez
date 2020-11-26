@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.alfilajedrez;
 
+import javax.naming.OperationNotSupportedException;
+
 public class Alfil 
 {
 	//atributos
@@ -7,6 +9,43 @@ public class Alfil
 	private Posicion posicion;
 	
 	//métodos
+	
+	public void mover(Direccion direccion, int pasos) throws OperationNotSupportedException 
+	{
+		if(pasos<=0)
+			throw new IllegalArgumentException("ERROR: la cantidad de pasos ha de ser positiva");
+		if(direccion==null)
+			throw new NullPointerException("ERROR: la direccion no puede ser nula");
+		
+		try 
+		{
+		
+			switch (direccion) 
+			{
+			case ARRIBA_DERECHA:
+				posicion=new Posicion((posicion.getFila()+pasos),(char)(posicion.getColumna()+pasos));
+				break;
+				
+			case ABAJO_DERECHA:
+				posicion=new Posicion((posicion.getFila()-pasos),(char)(posicion.getColumna()+pasos));
+				break;
+				
+			case ABAJO_IZQUIERDA:
+				posicion=new Posicion((posicion.getFila()-pasos),(char)(posicion.getColumna()-pasos));
+				break;	
+				
+			case ARRIBA_IZQUIERDA:
+				posicion=new Posicion((posicion.getFila()+pasos),(char)(posicion.getColumna()-pasos));
+				break;	
+				
+				default:
+				break;
+			}
+		}	
+		catch (IllegalArgumentException ex) {
+			throw new OperationNotSupportedException("ERROR: no se puede realizar ese movimiento");
+		}
+	}
 	
 	//constructor por defecto
 	public Alfil() throws IllegalArgumentException
@@ -64,9 +103,13 @@ public class Alfil
 	}
 }
 
-//15.Crea un constructor para la clase que acepte como parámetros el color y la columna inicial. La columna inicial debe ser válida 
-//(de lo contrario debe lanzar la excepción IllegalArgumentException con un mensaje adecuado) y creara un alfil del color dado y 
-//colocado en dicha columna ('c' o 'f') y cuya fila será la 1 si es blanco y la 8 si es negro. Realiza un commit
+//16.Crea el método mover que acepte como parámetro una Direccion y la cantidad de pasos a mover en dicha dirección. 
+//Los pasos deben ser positivos y la dirección no puede ser nula o de lo contrario debe lanzar una excepción adecuada 
+//(NullPointerException o IllegalArgumentException) con el mensaje adecuado. Si no puede realizar dicho movimiento, 
+//debido a que el álfil se sale del tablero, debe lanzar una excepción del tipo OperationNotSupportedException con un 
+//mensaje adecuado y no modificará la posición del alfil. Realiza un commit.
+
+
 
 
 
