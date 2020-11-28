@@ -10,7 +10,18 @@ public class MainApp {
 
 	public static void main(String[] args) {
 
+		int opcion=0;
+		do {
+		mostrarMenu();
+		opcion=elegirOpcion();
+		ejecutarOpcion(opcion);
+		if(opcion!=5)
+			mostrarAlfil();
+		else
+			System.out.println("¡Adios!");
+		} while(opcion!=5);
 	}
+		
 
 	// métodos
 
@@ -97,6 +108,10 @@ public class MainApp {
 		int numero;
 		do {
 			System.out.println("Elige una de estás opciones");
+			System.out.println("1.Arriba-derecha");
+			System.out.println("2.Abajo-derecha");
+			System.out.println("3.Abajo-izquierda");
+			System.out.println("4.Arriba-izquierda");
 			numero = Entrada.entero();
 			if (numero < 1 || numero > 4) {
 				System.out.println("Introduce un numero correcto");
@@ -141,6 +156,7 @@ public class MainApp {
 
 	private static void mover() {
 		Direccion direccion = elegirDireccion();
+		System.out.println("¿Cuantos pasos quieres mover?");
 		int pasos = Entrada.entero();
 		try {
 			alfil.mover(direccion, pasos);
@@ -148,31 +164,34 @@ public class MainApp {
 			// do nothing
 		}
 	}
+	
+	private static void ejecutarOpcion(int opcion) {
+		
+		switch (opcion) {
+		
+		case 1:
+			crearAlfilDefecto();
+			break;
+			
+		case 2:
+			crearAlfilColor();
+			break;
+			
+		case 3:
+			crearAlfilColorColumna();
+			break;
+			
+		case 4:
+			if(alfil == null) {
+				crearAlfilDefecto();
+			}
+			mover();
+			break;
+				
+		case 5:
+			break;
+		}
+	}
 
 }
-/*
- * 19.Crea los diferentes métodos que se indican en el diagrama de clases para
- * permitir que el método main nos muestre un menú que nos permitirá crear un
- * alfil por defecto, crear un alfil de un color, crear un alfil de un color en
- * una columna inicial dada ('c' o 'f'), mover el alfil y salir. Después de cada
- * operación se nos mostrará el estado actual de nuestro alfil. El menú se
- * repetirá mientras no elijamos la opción salir. En todo caso se debe validar
- * que todas las entradas al programa son correctas. Para ello implementa los
- * siguientes métodos:
- */
-/*
- * 
- * 
- * 
- * 11.void mover(): Mostrará un menú con las posibles direcciones, nos
- * preguntará por la dirección y la cantidad de pasos a mover y moverá el alfil
- * según esos parámetros. Este método debe utilizar métodos ya implementados
- * anteriormente. Realiza un commit. 12.void ejecutarOpcion(int): Depediendo de
- * la opción pasada como parámetro, actuará en consecuencia. Este método debe
- * utilizar métodos ya implementados anteriormente. Realiza un commit.
- * 
- * 12.void ejecutarOpcion(int): Depediendo de la opción pasada como parámetro,
- * actuará en consecuencia. Este método debe utilizar métodos ya implementados
- * anteriormente. Realiza un commit.
- */
 
