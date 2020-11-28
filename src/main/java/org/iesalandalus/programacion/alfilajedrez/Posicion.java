@@ -1,7 +1,5 @@
 package org.iesalandalus.programacion.alfilajedrez;
 
-import org.apache.commons.math3.exception.NullArgumentException;
-
 public class Posicion 
 {
 	//atributos
@@ -22,7 +20,7 @@ public class Posicion
 	
 	public Posicion(Posicion p) //throws NullPointerException
 	{
-		if (p==null) 
+		if(p==null)
 			throw new NullPointerException("ERROR: No es posible copiar una posición nula.");
 		setFila(p.getFila());
 		setColumna(p.getColumna());
