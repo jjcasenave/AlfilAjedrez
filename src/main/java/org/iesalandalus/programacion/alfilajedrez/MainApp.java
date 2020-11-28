@@ -99,7 +99,61 @@ public class MainApp {
 		System.out.println("4.arriba-izquierda");
 	}
 	
+	private static Direccion elegirDireccion() 
+	{
+		Direccion direccion=null;
+		int numero;
+		do {
+			System.out.println("Elige una de estás opciones");
+			numero=Entrada.entero();
+			if (numero<1 || numero>4)
+	   		{
+	    	System.out.println("Introduce un numero correcto");
+	   		}
+		} while (numero<1 || numero>4);
+		
+		switch(numero) {
+		
+		case 1:
+			direccion=Direccion.ARRIBA_DERECHA;
+			break;
+			
+		case 2:
+			direccion=Direccion.ABAJO_DERECHA;
+			break;
+			
+		case 3:
+			direccion=Direccion.ABAJO_IZQUIERDA;
+			break;
+			
+		case 4:
+			direccion=Direccion.ABAJO_IZQUIERDA;
+			break;
+			
+		default:
+			break;
+		}
+		return direccion;
+	}
 	
 	
 
 }
+
+/*19.Crea los diferentes métodos que se indican en el diagrama de clases para permitir que el método main nos muestre un menú que nos permitirá 
+ * crear un alfil por defecto, crear un alfil de un color, crear un alfil de un color en una columna inicial dada ('c' o 'f'), mover el alfil y salir.
+ *  Después de cada operación se nos mostrará el estado actual de nuestro alfil. El menú se repetirá mientras no elijamos la opción salir. 
+ *  En todo caso se debe validar que todas las entradas al programa son correctas. Para ello implementa los siguientes métodos:
+ */
+/*
+
+
+
+
+
+8.void crearAlfilDefecto(): Asignará al atributo de clase alfil una nueva instancia de un alfil creado con el constructor por defecto. Realiza un commit.
+9.void crearAlfilColor(): Asignará al atributo de clase alfil una nueva instancia de un alfil creado con el constructor al que le pasamos el color. Este método debe utilizar métodos ya implementados anteriormente. Realiza un commit.
+10.void crearAlfilColorColumna(): Asignará al atributo de clase alfil una nueva instancia de un alfil creado con el constructor al que le pasamos el color y la columna inicial. Este método debe utilizar métodos ya implementados anteriormente. Realiza un commit.
+11.void mover(): Mostrará un menú con las posibles direcciones, nos preguntará por la dirección y la cantidad de pasos a mover y moverá el alfil según esos parámetros. Este método debe utilizar métodos ya implementados anteriormente. Realiza un commit.
+12.void ejecutarOpcion(int): Depediendo de la opción pasada como parámetro, actuará en consecuencia. Este método debe utilizar métodos ya implementados anteriormente. Realiza un commit.
+*/

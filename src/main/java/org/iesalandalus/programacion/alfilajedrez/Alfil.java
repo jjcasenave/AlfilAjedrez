@@ -69,10 +69,11 @@ public class Alfil
 	
 	public Alfil(Color color, char columna) throws NullPointerException, IllegalArgumentException
 	{
-		if(columna!='c' || columna!='f')
-			throw new IllegalArgumentException("ERROR: Columna no válida.");
 		if(color==null)
-			throw new NullPointerException("ERROR: el color no puede ser nulo");
+			throw new NullPointerException("ERROR: No se puede asignar un color nulo.");
+		if(!(columna=='c' || columna=='f')) //acabo de aprender a negar una afirmación !!!!!!
+			throw new IllegalArgumentException("ERROR: Columna no válida.");
+		
 		
 		setColor(color);
 		if(color.equals(Color.BLANCO))
