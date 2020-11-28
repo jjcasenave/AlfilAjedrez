@@ -140,7 +140,9 @@ public class MainApp {
 		alfil=new Alfil();
 	}
 	
-	
+	private static void crearAlfilColor() {
+		alfil=new Alfil(Color.BLANCO);
+	}
 
 }
 
@@ -157,7 +159,6 @@ public class MainApp {
 
 
 
-9.void crearAlfilColor(): Asignará al atributo de clase alfil una nueva instancia de un alfil creado con el constructor al que le pasamos el color. Este método debe utilizar métodos ya implementados anteriormente. Realiza un commit.
 10.void crearAlfilColorColumna(): Asignará al atributo de clase alfil una nueva instancia de un alfil creado con el constructor al que le pasamos el color y la columna inicial. Este método debe utilizar métodos ya implementados anteriormente. Realiza un commit.
 11.void mover(): Mostrará un menú con las posibles direcciones, nos preguntará por la dirección y la cantidad de pasos a mover y moverá el alfil según esos parámetros. Este método debe utilizar métodos ya implementados anteriormente. Realiza un commit.
 12.void ejecutarOpcion(int): Depediendo de la opción pasada como parámetro, actuará en consecuencia. Este método debe utilizar métodos ya implementados anteriormente. Realiza un commit.
